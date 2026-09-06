@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skym3u.dev/sitemap.xml
