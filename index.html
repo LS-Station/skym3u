@@ -3,25 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyM3U - Premium M3U Playlists & IPTV Links</title>
-    <meta name="description" content="Get updated M3U playlists, direct M3U8 IPTV streaming links, and daily channel sources on SkyM3U.">
-    <link rel="canonical" href="https://skym3u.dev/" />
+    
+    <title>SkyM3U - Premium M3U Playlist & Live IPTV Resource Center</title>
+    <meta name="title" content="SkyM3U - Premium M3U Playlist & Live IPTV Resource Center">
+    <meta name="description" content="Access updated M3U playlists, direct M3U8 IPTV streaming links, HD channels, and fast server configurations on SkyM3U.">
+    <meta name="keywords" content="skym3u, m3u playlist, free iptv links, m3u8 stream, live tv playlist, iptv router">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://ls-station.github.io/skym3u/" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ls-station.github.io/skym3u/">
+    <meta property="og:title" content="SkyM3U - Premium M3U Playlists & IPTV Links">
+    <meta property="og:description" content="Get instant access to ultra-fast M3U playlists, IPTV links, and HD streaming channels. Updated daily!">
+    <meta property="og:image" content="https://skym3u.dev/favicon.ico">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SkyM3U",
+      "url": "https://ls-station.github.io/skym3u/",
+      "description": "Premium M3U Playlist and IPTV streaming portal.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://skym3u.dev/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <style>
-        body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; text-align: center; padding: 50px 20px; }
-        .card { background: #1e293b; max-width: 600px; margin: 0 auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        h1 { color: #38bdf8; font-size: 28px; }
-        p { color: #94a3b8; line-height: 1.6; }
-        .btn { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #0284c7; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; }
-        .btn:hover { background: #0369a1; }
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(23, 32, 54, 0.7);
+            --primary: #38bdf8;
+            --primary-hover: #0284c7;
+            --accent: #22c55e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: var(--bg-color); 
+            color: var(--text-main); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 20px;
+        }
+
+        .container {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 650px;
+            width: 100%;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        h1 { font-size: 32px; color: var(--text-main); margin-bottom: 12px; font-weight: 700; }
+        h1 span { color: var(--primary); }
+        p.subtitle { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-bottom: 30px; }
+
+        .btn-main {
+            display: inline-block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 35px;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.6);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-card h3 { font-size: 14px; color: var(--primary); margin-bottom: 5px; }
+        .feature-card p { font-size: 12px; color: var(--text-muted); }
+
+        .faq { text-align: left; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; }
+        .faq h2 { font-size: 16px; color: var(--text-main); margin-bottom: 10px; }
+        .faq p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+        footer { margin-top: 25px; font-size: 12px; color: var(--text-muted); }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>SkyM3U Resource Center</h1>
-        <p>Welcome to SkyM3U. We provide fast, reliable, and updated M3U playlist links and IPTV streaming configurations.</p>
-        
-        <!-- আপনার মূল Blogger / Service Portal-এর Backlink -->
-        <a href="https://skym3u.dev" class="btn">Access Official M3U Portal</a>
+
+    <div class="container">
+        <div class="badge">
+            <span class="dot"></span> Servers Online & Updated
+        </div>
+
+        <h1>Welcome to <span>SkyM3U</span> Portal</h1>
+        <p class="subtitle">Your ultimate gateway for high-speed M3U playlist links, M3U8 live channels, and verified IPTV configurations.</p>
+
+        <a href="https://skym3u.dev" class="btn-main">🚀 Access Official SkyM3U Portal</a>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>⚡ High Speed</h3>
+                <p>Buffer-free playback with Cloudflare Edge routing.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔄 Daily Updates</h3>
+                <p>Fresh playlists and auto-renewed channels.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📱 All Devices</h3>
+                <p>Compatible with TiviMate, Smart TV, VLC & OTT.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>Q: How to get the latest M3U playlists?</strong><br>
+            A: Click the portal button above to visit our primary blog for daily updated playlists and streaming setup guides.</p>
+        </div>
+
+        <footer>
+            &copy; 2026 SkyM3U Resource Center. All rights reserved.
+        </footer>
     </div>
+
 </body>
 </html>
